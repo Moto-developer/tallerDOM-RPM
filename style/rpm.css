@@ -1,0 +1,263 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(57, 56, 56);
+    margin: 0;
+}
+/*Estilos generales, para se usados en cualquier parte de la pagina*/
+.flex{ display: flex;}
+.flex-center{text-align: center;}
+.grid{ display: grid;}
+
+/*Estilos del contenedor principal*/
+.contenedor_ppal> *{
+    padding: 10px;
+    margin: 0;
+}
+
+/*Estilos del encabezado*/
+.encabezado{grid-area: encabezado;}
+.contenido{grid-area: contenido;}
+.pie_pagina{grid-area: pie_pagina;}
+
+.contenedor_ppal{
+    display: grid;
+    background: rgb(255, 250, 247);
+    grid-template-areas:'encabezado encabezado encabezado encabezado'
+                        'contenido contenido contenido contenido'
+                        'pie_pagina pie_pagina pie_pagina pie_pagina';
+    margin: 0;
+}
+
+.logo{ grid-area: logo;}
+.redes-soc{grid-area: redes-soc;}
+.menu_principal{grid-area: menu-principal;}
+
+.contenedor_ppal .encabezado{
+    display: grid;
+    grid-template-areas: 'logo redes-soc'
+    'logo menu-principal';
+    height: 100px;
+    background: linear-gradient(#1486cc,#c2d5f8);
+}
+
+.menu-principal{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.redes-soc{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 10px;
+
+}
+.redes-soc > div{
+    padding: 10px;
+}
+.enlace-menu{
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo > img{
+    max-width: 15%;
+    height: auto;
+}
+.enlace-menu:hover{
+    border-bottom: 2px solid rgb(255, 166, 0);
+    display: inline-block;
+    background: #ffc800;
+    color: rgb(73, 33, 7);
+}
+
+/*Aquí terminan los estilos del encabezado*/
+
+/*Estilos del contenido*/
+
+.contenido{
+    margin: 0;
+    padding: 0;
+}
+
+.imagen-principal{
+display: flex;
+background-image: url('../img/Imagenfondoppal2.jpg');
+max-width: 100%;
+min-height: 90%;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+color: azure;
+text-shadow: 3px 3px 7px rgb(36, 35, 35);
+}
+
+.servicios{
+    margin: 0 auto;
+    width: 95%;
+}
+
+.columna{
+    background: #c2d5f8;
+    margin: 10px;
+    border-radius: 10px;
+    border: #073754 1px;
+    box-shadow: 1px 2px;
+    padding: 10px;
+}
+
+.boton-ver-mas{
+    background: #ffc800;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    text-decoration: none;
+}
+.boton-ver-mas:hover{
+    background: #1486cc;
+    color: #ffffff;
+}
+
+.icon-grande{
+    max-width: 30%;
+    height: auto;
+}
+
+.pie_pagina{
+    display: flex;
+    background: #073754;
+    color: rgb(247, 255, 255);
+    justify-content:space-between;
+    align-items: center;
+    min-height: 100px;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Estilos para el formulario de registro */
+
+/* .signupFrm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+
+.form {
+    background-color: white;
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.inputContainer {
+    position: relative;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 17px;
+}
+
+.input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+}
+
+.label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0 4px;
+    background-color: white;
+    color: #DADCE0;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+::placeholder {
+    color: transparent;
+}
+
+.submitBtn {
+    display: block;
+    margin-left: auto;
+    padding: 15px 30px;
+    border: none;
+    background-color: #ffc800;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.submitBtn:hover {
+    background-color: #e9a512;
+    transform: translateY(-2px);
+}
+.input:focus + .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffc800;
+}
+
+.input:not(:placeholder-shown)+ .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input:focus {
+    border: 2px solid #ffc800;
+}
+
+.modal::backdrop{
+
+    background-color: rgba(0,0,0,.70);
+}
+
+.modal2::backdrop{
+    
+    background-color: rgba(0,0,0,.70);
+}
+
+.modal, .modal2{
+    border-radius: 10px;
+}
+
+#tipoUsuario{
+    border-radius: 3px;
+    border-color: #DADCE0
+}
+/* Aqui terminan los estilos para el formulario de registro */
+
+
